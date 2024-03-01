@@ -8,7 +8,7 @@ const App = () => {
 	const [counter, setCounter] = useState (0);
 
 	useEffect(() => {
-		const interval = setInterval {() => {
+		const interval = setInterval (() => {
 			setCounter(counter => counter + 1)
 		}, 1000)
 		console.log(counter)
@@ -17,9 +17,10 @@ const App = () => {
 		
 	return (
 		<>
-		<SimpleCounter />
+		<SimpleCounter seconds={counter}/>
 		</>
 	);
 };
 
 export default App;
+

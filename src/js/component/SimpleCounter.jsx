@@ -1,6 +1,6 @@
 import React from "react";
 
-const SimpleCounter = () => {
+const SimpleCounter = (props) => {
     return (
         <div className="counter-display">
             <div className="clock-img">
