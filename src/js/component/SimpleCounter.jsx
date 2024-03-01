@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const SimpleCounter = (props) => {
     return (
@@ -9,14 +10,23 @@ const SimpleCounter = (props) => {
                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
                 </svg>
             </div>
-            <div className="seconds millions">0</div>
-            <div className="seconds hundredthousands">0</div>
-            <div className="seconds thousands">0</div>
-            <div className="seconds hundreds">0</div>
-            <div className="seconds seconds">0</div>
-            <div className="seconds ones">0</div>
+            <div className="seconds millions">{props.millionsDigit}</div>
+            <div className="seconds hundredthousands">{props.hundredthousandsDigit}</div>
+            <div className="seconds thousands">{props.thousandsDigit}</div>
+            <div className="seconds hundreds">{props.hundredsDigit}</div>
+            <div className="seconds tens">{props.tensDigit}</div>
+            <div className="seconds ones">{props.oneDigit}</div>
         </div>
     )
+}
+
+SimpleCounter.prototypes = {
+    millionsDigit: PropTypes.number,
+    hundredthousandsDigit: PropTypes.number,
+    thousandsDigit: PropTypes.number,
+    hundredsDigit: PropTypes.number,
+    tensDigit: PropTypes.number,
+    oneDigit: PropTypes.number,
 }
 
 export default SimpleCounter;

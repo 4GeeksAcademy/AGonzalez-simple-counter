@@ -14,10 +14,21 @@ const App = () => {
 		console.log(counter)
 		return () => clearInterval(interval)
 	}, [counter])
+
+	const calculateSeconds = (aCounter, placeValue) => {
+		return Math.floor(aCounter / placeValue) % 10
+	}
 		
 	return (
 		<>
-		<SimpleCounter seconds={counter}/>
+		<SimpleCounter 
+			millionsDigit = {calculateSeconds(counter,1000000)}
+			hundredthousandsDigit = {calculateSeconds(counter,10000)}
+			thousandsDigit = {calculateSeconds(counter,1000)}
+			hundredsDigit = {calculateSeconds(counter,100)}
+			tensDigit = {calculateSeconds(counter,10)}
+			oneDigit = {calculateSeconds(counter,1)}
+		/>
 		</>
 	);
 };
